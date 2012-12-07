@@ -1,4 +1,4 @@
-class bigbluebutton ( $salt = '' ) { 
+class bigbluebutton ( $salt = '' ) {
 
   class install
   {
@@ -16,13 +16,17 @@ class bigbluebutton ( $salt = '' ) {
         ensure => present,
         content => "deb http://us.archive.ubuntu.com/ubuntu lucid multiverse"
     }
-    
-    package {"ruby1.9.2":
-        provider => dpkg,
-        ensure => installed,
-        source => "/vagrant_data/ruby1.9.2_1.9.2-p290-1_amd64.deb"
+
+    apt::ppa {"pratikmsinha":
+      ensure => present,
+      key    => '1024R/A84F68D2'
+      ppa    => 'ruby192+bindings';
     }
-    
+
+    package {"ruby1.9.2":
+        ensure => installed;
+    }
+
     package {
       "bbb-freeswitch-config":
         ensure => installed;
@@ -58,14 +62,6 @@ class bigbluebutton ( $salt = '' ) {
         command     => "/usr/local/bin/bbb-conf --stop",
         refreshonly => true;
     }
-
-
-#   include logrotate
-#   logrotate::file { "tomcat":
-#       source     => "/etc/logrotate.d/tomcat",
-#       rotation   => [ "daily", "compress", "rotate 7", "missingok", "dateext", "copytruncate" ],
-#       log        => "/var/log/tomcat6/catalina.out",
-#   }
 
     augeas{
       "freeswitch_destination_number" :
@@ -116,4 +112,4 @@ class bigbluebutton ( $salt = '' ) {
   include install
   include config
   Class['install'] -> Class['config']
-} 
+}
