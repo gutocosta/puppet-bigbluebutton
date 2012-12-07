@@ -6,7 +6,7 @@ class bigbluebutton::install {
 
   apt::sources_list {'bigbluebutton':
     ensure  => present,
-    content => 'deb http://ubuntu.bigbluebutton.org/lucid_dev_08/ bigbluebutton-$::lsbdistcodename main',
+    content => "deb http://ubuntu.bigbluebutton.org/lucid_dev_08/ bigbluebutton-$::lsbdistcodename main",
   }
 
   apt::sources_list {'multiverse':
