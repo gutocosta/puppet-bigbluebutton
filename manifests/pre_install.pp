@@ -10,4 +10,9 @@ class bigbluebutton::pre_install {
     provider => 'gem';
   }
 
+  package {'bundler':
+    ensure    => '1.2.1',
+    provider  => 'gem';
+  }
+
 }

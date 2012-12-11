@@ -9,6 +9,8 @@ class bigbluebutton::config_ruby {
       ensure => installed;
     'ruby1.9.2-dev':
       ensure => installed;
+    'libopenssl-ruby1.9.2':
+      ensure => installed;
   }
 
   file {'/etc/profile.d/ruby.sh':
