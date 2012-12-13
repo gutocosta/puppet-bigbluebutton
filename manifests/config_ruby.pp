@@ -12,13 +12,4 @@ class bigbluebutton::config_ruby {
     'libopenssl-ruby1.9.2':
       ensure => installed;
   }
-
-  file {'/etc/profile.d/ruby.sh':
-    ensure  => present,
-    source  => 'puppet:///modules/bigbluebutton/ruby.sh',
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644';
-  }
-
 }
