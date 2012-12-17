@@ -17,4 +17,4 @@ include bigbluebutton
 
 See the bigbluebutton::params class for more parameters to use for configuration of the server.
 
-
+[camptocamp apt module]: https://github.com/camptocamp/puppet-apt
