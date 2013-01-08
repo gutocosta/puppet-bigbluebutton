@@ -1,9 +1,6 @@
-
-
+// Managed with Puppet
 // This is the security salt that must match the value set in the BigBlueButton server
-String salt = "<%= salt %>";
+String salt = "<%= scope.lookupvar("bigbluebutton::salt") %>";
 
 // This is the URL for the BigBlueButton server
 String BigBlueButtonURL = "http://<%= fqdn %>/bigbluebutton/";
-
-
