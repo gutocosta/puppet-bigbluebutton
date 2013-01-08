@@ -1,22 +1,22 @@
 class bigbluebutton::pre_install {
 
-  package {"builder":
+  package { 'builder':
     ensure   => installed,
     provider => gem;
   }
 
-  package { "god":
+  package { 'god':
     ensure   => installed,
     provider => 'gem';
   }
 
-  package {'bundler':
+  package { 'bundler':
     ensure    => '1.2.1',
     provider  => 'gem';
   }
 
-  file {'/etc/sudoers.d/secure_path':
-    ensure  => file,
+  file { '/etc/sudoers.d/secure_path':
+    ensure  => present,
     mode    => '0440',
     owner   => 'root',
     group   => 'root',
@@ -24,7 +24,7 @@ class bigbluebutton::pre_install {
   }
 
   file {'/etc/environment':
-    ensure => file,
+    ensure => present,
     mode   => '0644',
     owner  => 'root',
     group  => 'root',
