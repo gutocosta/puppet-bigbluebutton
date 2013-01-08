@@ -45,6 +45,7 @@
 #
 
 class bigbluebutton::params (
+  $salt                 = '1b8ede0fg3d3c73re97b8c69qed478e4',
   $help_url             = "http://${::fqdn}/help",
   $enable_skin          = 'false',
   $theme_skin           = 'branding/css/theme.css.swf',
