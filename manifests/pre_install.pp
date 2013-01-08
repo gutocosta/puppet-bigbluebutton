@@ -23,11 +23,4 @@ class bigbluebutton::pre_install {
     source  => 'puppet:///modules/bigbluebutton/secure_path';
   }
 
-  file {'/etc/environment':
-    ensure => present,
-    mode   => '0644',
-    owner  => 'root',
-    group  => 'root',
-    source => 'puppet:///modules/bigbluebutton/path';
-  }
 }
