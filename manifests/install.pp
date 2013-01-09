@@ -1,18 +1,16 @@
 class bigbluebutton::install {
 
-  file {'/var/local/preseed':
-    ensure => 'directory';
-  }
+  $preseed_file = '/var/cache/debconf/bigbluebutton.preseed'
 
-  file {'/var/local/preseed/bigbluebutton.preseed':
-    ensure  => file,
+  file {
+    $preseed_file:
+    ensure => present,
     source => 'puppet:///modules/bigbluebutton/bigbluebutton.preseed',
-    require => File['/var/local/preseed'];
   }
 
   package { 'bigbluebutton':
     ensure       => installed,
-    responsefile => '/var/local/preseed/bigbluebutton.preseed',
-    require      => File['/var/local/preseed/bigbluebutton.preseed'];
+    responsefile => $preseed_file,
+    require      => File[$preseed_file];
   }
 }
