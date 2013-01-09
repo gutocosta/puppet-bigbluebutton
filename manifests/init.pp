@@ -62,7 +62,7 @@
 #  }
 #
 class bigbluebutton (
-  $salt,
+  $salt                 = $bigbluebutton::params::salt,
   $help_url             = $bigbluebutton::params::help_url,
   $enable_skin          = $bigbluebutton::params::enable_skin,
   $theme_skin           = $bigbluebutton::params::theme_skin,
