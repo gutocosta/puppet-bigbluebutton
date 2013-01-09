@@ -5,18 +5,6 @@
 
 class bigbluebutton::config {
 
-  exec {
-    'restartbbb':
-      command     => '/usr/local/bin/bbb-conf --restart',
-      refreshonly => true;
-    'startbbb':
-      command     => '/usr/local/bin/bbb-conf --start',
-      refreshonly => true;
-    'stopbbb':
-      command     => '/usr/local/bin/bbb-conf --stop',
-      refreshonly => true;
-  }
-
   file { '/etc/nginx/sites-available/bigbluebutton':
     ensure  => file,
     content => template('bigbluebutton/bigbluebutton-nginx.erb');
