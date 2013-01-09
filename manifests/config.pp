@@ -40,7 +40,7 @@ class bigbluebutton::config () inherits bigbluebutton::params {
 
   file { '/usr/local/bigbluebutton/core/scripts/slides.yml':
     ensure  => present,
-    content => template('bigbluebutton/slides.yml.erb',
+    content => template('bigbluebutton/slides.yml.erb'),
     notify  => Exec['restartbbb'],
     require => Package['bigbluebutton'];
   }
