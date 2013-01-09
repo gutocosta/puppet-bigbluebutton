@@ -87,5 +87,6 @@ class bigbluebutton (
   class{'bigbluebutton::config_ruby':;} ~>
   class{'bigbluebutton::pre_install':;} ~>
   class{'bigbluebutton::install':;} ~>
-  class{'bigbluebutton::config':;}
+  class{'bigbluebutton::config':;} ~>
+  class{'bigbluebutton::service':;}
 }
