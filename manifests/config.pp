@@ -3,7 +3,7 @@
 # This class manages the configuration of bigbluebutton
 #
 
-class bigbluebutton::config () inherits bigbluebutton::params {
+class bigbluebutton::config {
 
   exec {
     'restartbbb':
