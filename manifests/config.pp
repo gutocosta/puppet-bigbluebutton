@@ -8,15 +8,12 @@ class bigbluebutton::config {
   exec {
     'restartbbb':
       command     => '/usr/local/bin/bbb-conf --restart',
-      returns     => 1,
       refreshonly => true;
     'startbbb':
       command     => '/usr/local/bin/bbb-conf --start',
-      returns     => 1,
       refreshonly => true;
     'stopbbb':
       command     => '/usr/local/bin/bbb-conf --stop',
-      returns     => 1,
       refreshonly => true;
   }
 
