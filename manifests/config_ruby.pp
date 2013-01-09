@@ -7,10 +7,14 @@ class bigbluebutton::config_ruby {
       ensure => installed;
     'ruby1.9.2-dev':
       ensure => installed;
-    'make':
-      ensure => installed;
     'libopenssl-ruby1.9.2':
       ensure => installed;
+  }
+
+  if !defined(Package['make']) {
+    package { 'make':
+      ensure => installed;
+    }
   }
 
   exec {
