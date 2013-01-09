@@ -4,6 +4,8 @@
 #
 # === Parameters:
 #
+# $salt::                 default salt for rest authentication
+#
 # $help_url::             The url to redirect users to after clicking the help button, this defaults to an internal
 #                         bigbluebutton page with help information about the software.
 #
