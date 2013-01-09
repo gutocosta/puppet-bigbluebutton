@@ -6,16 +6,6 @@
 class bigbluebutton::config {
 
   exec {
-    'sethostname':
-      command => "/usr/local/bin/bbb-conf --setip ${::fqdn}",
-      unless  => '/usr/local/bin/bbb-conf --check';
-    'setsalt':
-      command => "/usr/local/bin/bbb-conf --salt ${bigbluebutton::salt}",
-      notify  => Exec['restartbbb'],
-      unless  => "/usr/local/bin/bbb-conf --salt | /bin/grep -q ${bigbluebutton::salt}";
-    'cleanbbb':
-      command     => '/usr/local/bin/bbb-conf --clean',
-      refreshonly => true;
     'restartbbb':
       command     => '/usr/local/bin/bbb-conf --restart',
       refreshonly => true;
