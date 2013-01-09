@@ -2,7 +2,7 @@ class bigbluebutton::pre_install {
 
   package { 'builder':
     ensure   => installed,
-    provider => gem;
+    provider => 'gem';
   }
 
   package { 'god':
