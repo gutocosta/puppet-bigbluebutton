@@ -83,10 +83,10 @@ class bigbluebutton (
   $enable_h264          = $bigbluebutton::params::enable_h264
 ) inherits bigbluebutton::params
 {
-  class{'bigbluebutton::repos':;} ~>
-  class{'bigbluebutton::config_ruby':;} ~>
-  class{'bigbluebutton::pre_install':;} ~>
-  class{'bigbluebutton::install':;} ~>
-  class{'bigbluebutton::config':;} ~>
   class{'bigbluebutton::service':;}
+  ~> class{'bigbluebutton::config':;}
+  ~> class{'bigbluebutton::install':;}
+  ~> class{'bigbluebutton::pre_install':;}
+  ~> class{'bigbluebutton::config_ruby':;}
+  ~> class{'bigbluebutton::repos':;}
 }
