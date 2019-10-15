@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe 'bigbluebutton' do
   context 'on a Ubuntu OS' do
-    let :facts do
 
+    let :facts do
       {
         kernel:                 'Linux',
         osfamily:               'Debian',
